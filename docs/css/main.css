@@ -68,6 +68,24 @@ footer
     color: #555B6E;
     cursor: pointer;
 }
+.order-button
+{
+    background-color: #555B6E;
+    color: #FAF9F9;
+    border-radius: 5px;
+    width: 300px;
+    height: 75px;
+    border: 5px solid black;
+    font-size: 50px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.order-button:hover
+{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
 
 .status
 {
