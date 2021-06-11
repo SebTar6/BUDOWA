@@ -1,3 +1,5 @@
+//--kontakt--
+
 function validateForm() {
     var name = document.getElementById('name').value;
     if (name === "") {
@@ -26,4 +28,22 @@ function validateForm() {
         return false;
     }
     document.querySelector('.status').innerHTML = "Wysłano &#128522;";
+}
+
+//--zamówienia--
+
+function dodajZamowienie() {
+    var item = {};
+    item.imie = document.getElementById('imie').value;
+    item.ulica = document.getElementById('ulica').value;
+    item.kod = document.getElementById('kod').value;
+    item.miasto = document.getElementById('miasto').value;
+    item.telefon = document.getElementById('telefon').value;
+    item.email = document.getElementById('email').value;
+    item.produkt = document.getElementById('produkt').value;
+    item.liczba = document.getElementById('liczba').value;
+    var lista = JSON.parse(localStorage.getItem('lista'));
+    if (lista === null) lista = [];
+    lista.push(item);
+    localStorage.setItem('lista', JSON.stringify(lista));
 }

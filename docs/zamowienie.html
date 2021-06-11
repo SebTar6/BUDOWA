@@ -56,22 +56,138 @@
 <main>
     <br>
     <h1>TUTAJ ZŁOŻYSZ ZAMÓWIENIE</h1>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-    </p>
-    <br><br>
-    <div class="text-center">
-    <button class="order-button">ZAMÓW</button>
+    <div class="row pb-5">
+        <div class="col-md-6">
+            <form>
+                <table class="table text-center">
+                    <tbody>
+                    <tr>
+                        <td>Imię i nazwisko:</td>
+                        <td><input type="text" id="imie"></td>
+                    </tr>
+                    <tr>
+                        <td>Ulica i numer domu:</td>
+                        <td><input type="text" id="ulica"></td>
+                    </tr>
+                    <tr>
+                        <td>Kod pocztowy:</td>
+                        <td><input type="text" id="kod"></td>
+                    </tr>
+                    <tr>
+                        <td>Miasto:</td>
+                        <td><input type="text" id="miasto"></td>
+                    </tr>
+                    <tr>
+                        <td>Numer telefonu:</td>
+                        <td><input type="tel" id="telefon"></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="email" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Produkt:</td>
+                        <td><input type="text" id="produkt"></td>
+                    </tr>
+                    <tr>
+                        <td>Liczba sztuk:</td>
+                        <td><input type="number" id="liczba"></td>
+                    </tr>
+                    <tr>
+                        <td>Sposób dostawy:</td>
+                        <td><input type="radio" name="dostawa" value="Odbiór osobisty"> Odbiór osobisty<br>
+                            <input type="radio" name="dostawa" value="Wysyłka"> Wysyłka</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                <button onclick="dodajZamowienie()">Zamów (przycisk do zrobienia)</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's
+                standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                typesetting,
+                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                containing
+                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                versions
+                of Lorem Ipsum.
+            </p>
+        </div>
     </div>
-    <br>
-    <hr>
-    <br>
-    <h1>TWOJE ZAMÓWIENIA:</h1>
+    <div class="text-center p-5">
+    <button class="orders-button">POKAŻ ZAMÓWIENIA</button>
+    </div>
+    <section id="zamowienia"></section>
 </main>
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modaltitle1">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Imię i nazwisko:</td>
+                            <td><input type="text" id="imie-modal"></td>
+                        </tr>
+                        <tr>
+                            <td>Ulica i numer domu:</td>
+                            <td><input type="text" id="ulica-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Kod pocztowy:</td>
+                            <td><input type="text" id="kod-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Miasto:</td>
+                            <td><input type="text" id="miasto-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Numer telefonu:</td>
+                            <td><input type="tel" id="telefon-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td><input type="email" id="email-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Produkt:</td>
+                            <td><input type="text" id="produkt-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Liczba sztuk:</td>
+                            <td><input type="number" id="liczba-edit"></td>
+                        </tr>
+                        <tr>
+                            <td>Sposób dostawy:</td>
+                            <td><input type="radio" name="dostawa" value="Odbiór osobisty"> Odbiór osobisty<br>
+                                <input type="radio" name="dostawa" value="Wysyłka"> Wysyłka</td>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="modal-footer" id="modalfooter1">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="#savebutton">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <footer>Budowa.pl &copy; Sebastian Tarasiuk 2021</footer>
 </body>
 </html>
