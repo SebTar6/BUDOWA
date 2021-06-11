@@ -1,0 +1,20 @@
+body{
+    background-color: #FAF9F9;
+}
+body *{
+    font-family: 'Ubuntu', sans-serif;
+}
+.nav-settings{
+    background-color: #89B0AE;
+}
+.nav-logo{
+    width: 30px;
+    height: 30px;
+}
+h1{
+    font-weight: bold;
+}
+#onas{
+    text-align: center;
+    margin: 0 auto;
+}
