@@ -92,3 +92,13 @@ footer
     color: red;
     padding: 5px;
 }
+
+#filmy
+{
+    min-height: 600px;
+}
+
+h2
+{
+   text-align: center;
+}
