@@ -79,6 +79,7 @@ footer
     font-size: 20px;
     font-weight: 600;
     transition: 0.3s ease-in-out;
+    margin: 0 10px 0 10px;
 }
 
 .orders-button:hover
