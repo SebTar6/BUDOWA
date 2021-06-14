@@ -56,7 +56,7 @@
 <main>
     <br>
     <h1>TUTAJ ZŁOŻYSZ ZAMÓWIENIE</h1>
-    <div class="row pb-5">
+    <div class="row col-12 pb-5">
         <div class="col-md-6">
             <form>
                 <table class="table text-center">
@@ -87,7 +87,28 @@
                     </tr>
                     <tr>
                         <td>Produkt:</td>
-                        <td><input type="text" id="produkt" required></td>
+                        <td>
+                            <select id="produkt">
+                                <option value="Kostka brukowa">Kostka brukowa</option>
+                                <option value="Cement">Cement</option>
+                                <option value="Płytki">Płytki</option>
+                                <option value="Panele podłogowe">Panele podłogowe</option>
+                                <option value="Klej">Klej</option>
+                                <option value="Sztachety">Sztachety</option>
+                                <option value="Siekiera">Siekiera</option>
+                                <option value="Łopata">Łopata</option>
+                                <option value="Grabie">Grabie</option>
+                                <option value="Kosiarka spalinowa">Kosiarka spalinowa</option>
+                                <option value="Piła spalinowa">Piła spalinowa</option>
+                                <option value="Dmuchawa do liści">Dmuchawa do liści</option>
+                                <option value="Młotek">Młotek</option>
+                                <option value="Multitool">Multitool</option>
+                                <option value="Wiertarka">Wiertarka</option>
+                                <option value="Klucz francuski">Klucz francuski</option>
+                                <option value="Szlifierka">Szlifierka</option>
+                                <option value="Latarka">Latarka</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td>Liczba sztuk:</td>
@@ -95,13 +116,14 @@
                     </tr>
                     <tr>
                         <td>Sposób dostawy:</td>
-                        <td><input type="radio" name="dostawa" value="Odbiór osobisty"> Odbiór osobisty<br>
-                            <input type="radio" name="dostawa" value="Wysyłka"> Wysyłka</td>
+                        <td><input type="radio" name="dostawa" value="Odbiór osobisty" checked="checked"> Odbiór osobisty<br>
+                            <input type="radio" name="dostawa" value="Wysyłka"> Wysyłka
+                        </td>
                     </tr>
                     </tbody>
                 </table>
                 <div class="text-center">
-                <button type="button" class="button-add" onclick="dodajZamowienie()">Zamów</button>
+                    <button type="button" class="button-add" onclick="dodajZamowienie()">Zamów</button>
                 </div>
             </form>
         </div>
@@ -114,13 +136,12 @@
         </div>
     </div>
     <div class="text-center p-5">
-    <button class="orders-button" onclick="pokazListe()">POKAŻ ZAMÓWIENIA</button>
-    <button class="orders-button" onclick="usunListe()">USUŃ LISTĘ ZAMÓWIEŃ</button>
+        <button class="orders-button" onclick="pokazListe()">POKAŻ ZAMÓWIENIA</button>
+        <button class="orders-button" onclick="usunListe()">USUŃ LISTĘ ZAMÓWIEŃ</button>
     </div>
     <section class="px-5 text-center" id="zamowienia"></section>
 </main>
-<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -159,7 +180,26 @@
                         </tr>
                         <tr>
                             <td>Produkt:</td>
-                            <td><input type="text" id="produkt-edit" required></td>
+                            <td><select id="produkt-edit">
+                                <option value="Kostka brukowa">Kostka brukowa</option>
+                                <option value="Cement">Cement</option>
+                                <option value="Płytki">Płytki</option>
+                                <option value="Panele podłogowe">Panele podłogowe</option>
+                                <option value="Klej">Klej</option>
+                                <option value="Sztachety">Sztachety</option>
+                                <option value="Siekiera">Siekiera</option>
+                                <option value="Łopata">Łopata</option>
+                                <option value="Grabie">Grabie</option>
+                                <option value="Kosiarka spalinowa">Kosiarka spalinowa</option>
+                                <option value="Piła spalinowa">Piła spalinowa</option>
+                                <option value="Dmuchawa do liści">Dmuchawa do liści</option>
+                                <option value="Młotek">Młotek</option>
+                                <option value="Multitool">Multitool</option>
+                                <option value="Wiertarka">Wiertarka</option>
+                                <option value="Klucz francuski">Klucz francuski</option>
+                                <option value="Szlifierka">Szlifierka</option>
+                                <option value="Latarka">Latarka</option>
+                            </select></td>
                         </tr>
                         <tr>
                             <td>Liczba sztuk:</td>
@@ -167,8 +207,8 @@
                         </tr>
                         <tr>
                             <td>Sposób dostawy:</td>
-                            <td><input type="radio" name="dostawa" value="Odbiór osobisty"> Odbiór osobisty<br>
-                                <input type="radio" name="dostawa" value="Wysyłka"> Wysyłka</td>
+                            <td><input type="radio" name="dostawa-edit" value="Odbiór osobisty" checked="checked"> Odbiór osobisty<br>
+                                <input type="radio" name="dostawa-edit" value="Wysyłka"> Wysyłka
                             </td>
                         </tr>
                         </tbody>

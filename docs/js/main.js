@@ -30,23 +30,65 @@ function validateForm() {
     document.querySelector('.status').innerHTML = "Wysłano &#128522;";
 }
 
+function validateOrder() {
+    var name = document.getElementById('imie').value;
+    if (name === "") {
+        alert("Pole z imieniem nie może być puste!")
+        return false;
+    }
+    var adress = document.getElementById('ulica').value;
+    if (adress === "") {
+        alert("Pole z adresem nie może być puste!")
+        return false;
+    }
+    var code = document.getElementById('kod').value;
+    if (code === "") {
+        alert("Pole z kodem pocztowym nie może być puste!")
+        return false;
+    }
+    var city = document.getElementById('miasto').value;
+    if (city === "") {
+        alert("Pole z nazwą miasta nie może być puste!")
+        return false;
+    }
+    var number = document.getElementById('telefon').value;
+    if (number === "") {
+        alert("Pole z numerem telefonu nie może być puste!")
+        return false;
+    }
+    var email = document.getElementById('email').value;
+    if (email === "") {
+        alert("Pole z adresem email nie może być puste!")
+        return false;
+    }
+    var amount = document.getElementById('liczba').value;
+    if (amount === "") {
+        alert("Pole z liczbą sztuk nie może być puste!")
+        return false;
+    }
+    return true;
+}
+
 //--zamówienia--
 
 function dodajZamowienie() {
-    var item = {};
-    item.imie = document.getElementById('imie').value;
-    item.ulica = document.getElementById('ulica').value;
-    item.kod = document.getElementById('kod').value;
-    item.miasto = document.getElementById('miasto').value;
-    item.telefon = document.getElementById('telefon').value;
-    item.email = document.getElementById('email').value;
-    item.produkt = document.getElementById('produkt').value;
-    item.liczba = document.getElementById('liczba').value;
-    item.data = new Date();
-    var lista = JSON.parse(localStorage.getItem('lista'));
-    if (lista === null) lista = [];
-    lista.push(item);
-    localStorage.setItem('lista', JSON.stringify(lista));
+    if (validateOrder()) {
+        var item = {};
+        item.imie = document.getElementById('imie').value;
+        item.ulica = document.getElementById('ulica').value;
+        item.kod = document.getElementById('kod').value;
+        item.miasto = document.getElementById('miasto').value;
+        item.telefon = document.getElementById('telefon').value;
+        item.email = document.getElementById('email').value;
+        item.produkt = document.getElementById('produkt').value;
+        item.liczba = document.getElementById('liczba').value;
+        item.dostawa = document.querySelector('input[name="dostawa"]:checked').value;
+        item.data = new Date();
+        var lista = JSON.parse(localStorage.getItem('lista'));
+        if (lista === null) lista = [];
+        lista.push(item);
+        localStorage.setItem('lista', JSON.stringify(lista));
+    } else return false;
 }
 
 function pokazListe() {
@@ -65,6 +107,7 @@ function pokazListe() {
             str += "Email: " + lista[i].email + "<br>";
             str += "Produkt: " + lista[i].produkt + "<br>";
             str += "Liczba sztuk: " + lista[i].liczba + "<br>";
+            str += "Sposob dostawy: " + lista[i].dostawa + "<br>"
             str += "<button class='button-cancel' type='button' onclick='usunZamowienie(" + i + ")' >Usuń</button>";
             str += "<button class='button-edit' type='button' onclick='edycja(" + i + ")'>Edytuj</button>";
             str += "<br><hr style='width: 40%;'>";
@@ -99,6 +142,7 @@ function edycja(i) {
     $('#email-edit').val(lista[i].email);
     $('#produkt-edit').val(lista[i].produkt);
     $('#liczba-edit').val(lista[i].liczba);
+    $('#dostawa-edit').val(lista[i].dostawa);
     $('#modalfooter1').html
     ("<button type='button' id='button-close' onclick='zamknij()' >Anuluj</button>" +
         "<button type='button' id='button-save' onclick='zapisz(" + i + ")' >Zapisz zmiany</button>");
@@ -119,6 +163,7 @@ function zapisz(i) {
         lista[i].email = document.getElementById('email-edit').value;
         lista[i].produkt = document.getElementById('produkt-edit').value;
         lista[i].liczba = document.getElementById('liczba-edit').value;
+        lista[i].dostawa = document.querySelector('input[name="dostawa-edit"]:checked').value;
         localStorage.setItem('lista', JSON.stringify(lista));
         pokazListe();
         $('#modal1').modal('hide');
