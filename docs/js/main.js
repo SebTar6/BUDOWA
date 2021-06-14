@@ -53,7 +53,7 @@ function pokazListe() {
     var lista = JSON.parse(localStorage.getItem('lista'));
     var el = document.getElementById('zamowienia');
     var str = "<hr><h1>Twoja lista zamówień: </h1>";
-    if (lista === null) el.innerHTML = str + "<p>Pusta lista zamówień</p>";
+    if (lista === null) el.innerHTML = str += "<p>Pusta lista zamówień</p>";
     else {
         for (i = 0; i < lista.length; i++) {
             str += "<h3>Zamówienie z dnia " + lista[i].data + ":</h3>";
