@@ -79,7 +79,7 @@ footer
     font-size: 20px;
     font-weight: 600;
     transition: 0.3s ease-in-out;
-    margin: 0 10px 0 10px;
+    margin: 10px;
 }
 
 .orders-button:hover
@@ -102,4 +102,113 @@ footer
 h2
 {
    text-align: center;
+}
+
+.button-save
+{
+    background-color: #33cc33;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+    margin: 3px;
+}
+
+.button-save:hover
+{
+    text-decoration: none;
+    color: #555B6E;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    transform: scale(0.97);
+}
+
+.button-close
+{
+    background-color: #ff4d4d;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+    margin: 3px;
+}
+
+.button-close:hover
+{
+    text-decoration: none;
+    color: #555B6E;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    transform: scale(0.97);
+}
+
+.button-cancel
+{
+    background-color: #ff4d4d;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+    margin: 3px;
+}
+
+.button-cancel:hover
+{
+    text-decoration: none;
+    color: #555B6E;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    transform: scale(0.97);
+}
+
+.button-edit
+{
+    background-color: #d9d9d9;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+    margin: 3px;
+}
+
+.button-edit:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    transform: scale(0.97);
+}
+
+.button-add
+{
+    background-color: #555B6E;
+    color: #FAF9F9;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.15s ease-in-out;
+    margin: 3px;
+    width: 200px;
+}
+
+.button-add:hover
+{
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    transform: scale(0.97);
 }

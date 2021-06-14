@@ -63,35 +63,35 @@
                     <tbody>
                     <tr>
                         <td>Imię i nazwisko:</td>
-                        <td><input type="text" id="imie"></td>
+                        <td><input type="text" id="imie" required></td>
                     </tr>
                     <tr>
                         <td>Ulica i numer domu:</td>
-                        <td><input type="text" id="ulica"></td>
+                        <td><input type="text" id="ulica" required></td>
                     </tr>
                     <tr>
                         <td>Kod pocztowy:</td>
-                        <td><input type="text" id="kod"></td>
+                        <td><input type="text" id="kod" required></td>
                     </tr>
                     <tr>
                         <td>Miasto:</td>
-                        <td><input type="text" id="miasto"></td>
+                        <td><input type="text" id="miasto" required></td>
                     </tr>
                     <tr>
                         <td>Numer telefonu:</td>
-                        <td><input type="tel" id="telefon"></td>
+                        <td><input type="tel" id="telefon" required></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="email" id="email"></td>
+                        <td><input type="email" id="email" required></td>
                     </tr>
                     <tr>
                         <td>Produkt:</td>
-                        <td><input type="text" id="produkt"></td>
+                        <td><input type="text" id="produkt" required></td>
                     </tr>
                     <tr>
                         <td>Liczba sztuk:</td>
-                        <td><input type="number" id="liczba"></td>
+                        <td><input type="number" id="liczba" required></td>
                     </tr>
                     <tr>
                         <td>Sposób dostawy:</td>
@@ -101,7 +101,7 @@
                     </tbody>
                 </table>
                 <div class="text-center">
-                <button type="button" onclick="dodajZamowienie()">Zamów (przycisk do zrobienia)</button>
+                <button type="button" class="button-add" onclick="dodajZamowienie()">Zamów</button>
                 </div>
             </form>
         </div>
@@ -142,35 +142,35 @@
                         <tbody>
                         <tr>
                             <td>Imię i nazwisko:</td>
-                            <td><input type="text" id="imie-modal"></td>
+                            <td><input type="text" id="imie-edit" required></td>
                         </tr>
                         <tr>
                             <td>Ulica i numer domu:</td>
-                            <td><input type="text" id="ulica-edit"></td>
+                            <td><input type="text" id="ulica-edit" required></td>
                         </tr>
                         <tr>
                             <td>Kod pocztowy:</td>
-                            <td><input type="text" id="kod-edit"></td>
+                            <td><input type="text" id="kod-edit" required></td>
                         </tr>
                         <tr>
                             <td>Miasto:</td>
-                            <td><input type="text" id="miasto-edit"></td>
+                            <td><input type="text" id="miasto-edit" required></td>
                         </tr>
                         <tr>
                             <td>Numer telefonu:</td>
-                            <td><input type="tel" id="telefon-edit"></td>
+                            <td><input type="tel" id="telefon-edit" required></td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td><input type="email" id="email-edit"></td>
+                            <td><input type="email" id="email-edit" required></td>
                         </tr>
                         <tr>
                             <td>Produkt:</td>
-                            <td><input type="text" id="produkt-edit"></td>
+                            <td><input type="text" id="produkt-edit" required></td>
                         </tr>
                         <tr>
                             <td>Liczba sztuk:</td>
-                            <td><input type="number" id="liczba-edit"></td>
+                            <td><input type="number" id="liczba-edit" required></td>
                         </tr>
                         <tr>
                             <td>Sposób dostawy:</td>
@@ -183,8 +183,6 @@
                 </form>
             </div>
             <div class="modal-footer" id="modalfooter1">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="#savebutton">Save changes</button>
             </div>
         </div>
     </div>

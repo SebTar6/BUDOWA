@@ -65,8 +65,8 @@ function pokazListe() {
             str += "Email: " + lista[i].email + "<br>";
             str += "Produkt: " + lista[i].produkt + "<br>";
             str += "Liczba sztuk: " + lista[i].liczba + "<br>";
-            str += "<button class='' type='button' onclick='usunZamowienie(" + i + ")' >Usuń</button>";
-            str += "<button class='' type='button' onclick='edycja(" + i + ")'>Edytuj</button>";
+            str += "<button class='button-cancel' type='button' onclick='usunZamowienie(" + i + ")' >Usuń</button>";
+            str += "<button class='button-edit' type='button' onclick='edycja(" + i + ")'>Edytuj</button>";
             str += "<br><hr style='width: 40%;'>";
         }
     }
@@ -86,4 +86,45 @@ function usunZamowienie(i) {
     if (confirm("Usunąć zamówienie?")) lista.splice(i, 1);
     localStorage.setItem('lista', JSON.stringify(lista));
     pokazListe();
+}
+
+function edycja(i) {
+    var lista = JSON.parse(localStorage.getItem('lista'));
+    $('#modaltitle1').html('Edytujesz produkt ' + lista[i].produkt);
+    $('#imie-edit').attr('value', lista[i].imie);
+    $('#ulica-edit').val(lista[i].ulica);
+    $('#kod-edit').val(lista[i].kod);
+    $('#miasto-edit').val(lista[i].miasto);
+    $('#telefon-edit').val(lista[i].telefon);
+    $('#email-edit').val(lista[i].email);
+    $('#produkt-edit').val(lista[i].produkt);
+    $('#liczba-edit').val(lista[i].liczba);
+    $('#modalfooter1').html
+    ("<button type='button' id='button-close' onclick='zamknij()' >Anuluj</button>" +
+        "<button type='button' id='button-save' onclick='zapisz(" + i + ")' >Zapisz zmiany</button>");
+    $('#button-save').addClass('button-save');
+    $('#button-close').addClass('button-close');
+    $('#modal1').modal('show');
+}
+
+function zapisz(i) {
+    var lista = JSON.parse(localStorage.getItem('lista'));
+    if (document.getElementById('produkt-edit').value === '') alert('Nie podano nazwy produktu!')
+    else {
+        lista[i].imie = document.getElementById('imie-edit').value;
+        lista[i].ulica = document.getElementById('ulica-edit').value;
+        lista[i].kod = document.getElementById('kod-edit').value;
+        lista[i].miasto = document.getElementById('miasto-edit').value;
+        lista[i].telefon = document.getElementById('telefon-edit').value;
+        lista[i].email = document.getElementById('email-edit').value;
+        lista[i].produkt = document.getElementById('produkt-edit').value;
+        lista[i].liczba = document.getElementById('liczba-edit').value;
+        localStorage.setItem('lista', JSON.stringify(lista));
+        pokazListe();
+        $('#modal1').modal('hide');
+    }
+}
+
+function zamknij() {
+    $('#modal1').modal('hide');
 }
