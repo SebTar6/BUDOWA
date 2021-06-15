@@ -61,6 +61,13 @@ function validateOrder() {
         alert("Pole z adresem email nie może być puste!")
         return false;
     }
+    else {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if (!re.test(email)) {
+                alert("Wpisano niepoprawny adres email!")
+                return false;
+            }
+    }
     var amount = document.getElementById('liczba').value;
     if (amount === "") {
         alert("Pole z liczbą sztuk nie może być puste!")

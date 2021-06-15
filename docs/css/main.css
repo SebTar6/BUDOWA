@@ -108,6 +108,12 @@ footer
     padding: 5px;
 }
 
+.status-send
+{
+    color: green;
+    padding: 5px;
+}
+
 #filmy
 {
     min-height: 600px;
