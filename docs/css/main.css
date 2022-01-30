@@ -5,7 +5,7 @@ body
     max-width: 100%;
 }
 
-h1
+h1, h3
 {
     font-weight: 600;
     text-align: center;
@@ -233,15 +233,57 @@ h2
     transform: scale(0.97);
 }
 
+.table-orders
+{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.cells-orders
+{
+    border: 1px solid black;
+}
+
+.button-orders
+{
+    background-color: #555B6E;
+    color: #FAF9F9;
+    border-radius: 5px;
+    width: 10%;
+    height: 50px;
+    border: 5px solid black;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.editNdelete{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.buttons{
+    background-color: #89B0AE;
+    font-weight: 600;
+    border: none;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: linear-gradient(#89B0AE, transparent);
+    background: #555B6E;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(transparent, #FFD6BA);
-    border-radius: 6px;
+    background: #89B0AE;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #BEE3DB;
 }

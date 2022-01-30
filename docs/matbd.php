@@ -25,30 +25,49 @@
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Start</a>
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">Start</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item active dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
                     Oferta
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="matbd.html">Materiały budowlane</a>
-                    <a class="dropdown-item" href="narzduze.html">Narzędzia duże</a>
-                    <a class="dropdown-item" href="narzmale.html">Narzędzia małe</a>
+                    <a class="dropdown-item" href="matbd.php">Materiały budowlane</a>
+                    <a class="dropdown-item" href="narzduze.php">Narzędzia duże</a>
+                    <a class="dropdown-item" href="narzmale.php">Narzędzia małe</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="zamowienie.html">Zamówienie</a>
+                <form method="post" action="funkcje.php">
+                    <button class="nav-link buttons" type="submit" name="akcja" value="zamowienie">Zamówienie</button>
+                </form>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="sklepy.html">Nasze sklepy</a>
+                <a class="nav-link" href="sklepy.php">Nasze sklepy</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="kontakt.html">Kontakt</a>
+                <a class="nav-link" href="kontakt.php">Kontakt</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <?php
+                include_once "Klasy/Baza.php";
+                $db = new Baza("localhost", "root", "", "budowabd");
+
+                $sql = "SELECT * FROM logged_in_users";
+                $pola = ["sessionId","userId"];
+                $result = strip_tags($db->select($sql,$pola));
+                if($result != ""){
+                    echo("<form method='post' action='funkcje.php'>
+                    <button type='submit' class='nav-link buttons' name='akcja' value='wyloguj'>Wyloguj</button>
+                    </form>");
+                }
+                ?>
             </li>
         </ul>
     </div>
